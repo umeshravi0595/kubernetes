@@ -4,6 +4,8 @@ metadata:
   name: ambassador-pod
   labels:
     app: ambassador-app
+  annotations:
+    kubectl.kubnernetes.io/default-container: app-container-server
 spec:
   volumes:
   - name: shared
