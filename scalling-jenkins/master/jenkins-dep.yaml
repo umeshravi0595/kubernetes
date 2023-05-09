@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: "jenkins-master"
-          image: "umeshron05/jenkins"
+          image: "keaz/jenkins-master:alpine"
           imagePullPolicy: "IfNotPresent"
           ports:
             - name: http
