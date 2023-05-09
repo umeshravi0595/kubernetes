@@ -23,5 +23,17 @@
       spec:
         containers:
           - name: "jenkins-master"
-            image: "keaz/jenkins-master:alpine"
+            image: "umeshron05/jenkins"
             imagePullPolicy: "IfNotPresent"
+            ports:
+            - name: http
+              containerPort: 8080
+            - name: jnlp
+              containerPort: 50000
+          env:
+            - name: JAVA_OPTS
+              value: "-Djenkins.install.runSetupWizard=false"
+            - name: JENKINS_ADMIN_ID
+              value: "admin"
+            - name: JENKINS_ADMIN_PASSWORD
+              value: "admin"
