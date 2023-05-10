@@ -14,6 +14,15 @@ spec:
       labels:
         run: nginx
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - sloopstash-k8s-wkr-1
       containers:
-      - image: nginx
-        name: nginx
+        - image: nginx
+          name: nginx
